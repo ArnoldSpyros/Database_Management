@@ -143,7 +143,7 @@ public class DB_Interface extends javax.swing.JFrame {
         String conditionField = UpdateConditionField.getText(); // column that takes place in the condition
         String condition = UpdateCondition.getText(); // condition
         String newValue = NewValueOfUpdate.getText(); // new value of the column that user wants to update
-        int updatedFields = 0; // metritis gia to poses eggrafes enimerothikan
+        int updatedFields = 0; // counter for the number of records updated
         String query = "UPDATE $table SET $field = $value WHERE $conditionField = $condition";
         query = query.replace("$table", table); // replacing the variable $table with the String table
         query = query.replace("$field", field); // replacing the variable $field with the String field
