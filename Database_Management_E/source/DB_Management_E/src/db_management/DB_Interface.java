@@ -152,8 +152,8 @@ public class DB_Interface extends javax.swing.JFrame {
             query = query.replace("$conditionField", conditionField); // replacing the variable $conditionField with the String conditionField
             query = query.replace("$condition", condition); // replacing the variable $condition with the String condition
         } else { // if the checkbox to update under condition is NOT selected
-            query = query.replace("$value", "'" + newValue + "'" + "  --"); /* replacing the variable $value with the String value.
-             Also we add the String "--"" so the statement will recognise the condition ( from the substring WHERE till the end of the query) as a comment */
+            // no condition should be appended to the statement
+            query = "UPDATE " + table + " SET " + field + " = '" + newValue + "'";
 
         }
         Statement statement = dbcoConnection.createStatement();
